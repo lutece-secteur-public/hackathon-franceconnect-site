@@ -261,4 +261,24 @@
         
       
     </dependencies>
+
+    <profiles>
+      <profile>
+        <id>hackaton-deployment</id>
+        <build>
+          <plugins>
+            <plugin>
+              <groupId>fr.paris.lutece.tools</groupId>
+              <artifactId>lutece-maven-plugin</artifactId>
+              <version>3.0.2</version>
+              <extensions>true</extensions>
+              <configuration>
+                <finalName>${finalName}</finalName>
+                <outputDirectory>${outputDirectory}</outputDirectory>
+              </configuration>
+            </plugin>
+          </plugins>
+        </build>
+      </profile>
+    </profiles>
 </project>
