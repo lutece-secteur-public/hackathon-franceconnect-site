@@ -71,22 +71,20 @@
                     ${captcha}
                 </div>
                 </#if>
-                    <button type="submit" class="btn btn-primary btn-sm" name="Submit">
+                <#if url_new_account?has_content>
+                <a class="btn btn-primary" style="color:#fff;" title="#i18n{mylutece.xpage.login_form.labelButtonCreateAccount}" href="${url_new_account}">
+                    <span class="fa fa-plus-square-o"></span></i>&nbsp;
+                    #i18n{mylutece.xpage.login_form.labelButtonCreateAccount}
+                </a>
+                </#if>
+                    <button type="submit" class="btn btn-primary" name="Submit">
                         <span class="fa fa-lock"></span>&nbsp;
                         #i18n{mylutece.xpage.login_form.labelButton}
                     </button>
+                    <a href="servlet/plugins/franceconnect/callback?data_client=federateDatabase" class="btn btn-default">
+        								<img src="images/btn-fc.jpg" title="" alt=""> Se connecter avec FranceConnect
+      							</a>
 
-                    <form method="post" class="form-inline" id="federateFranceConnec" action="servlet/plugins/franceconnect/callback?data_client=federateDatabase">
-        			 				<button class="btn btn-default btn-sm btn-fc" type="button" name="Federation">
-        								<i class="ionicon ion-log-in"></i> Se connecter avec FranceConnect
-        							</button>
-        						</form>
-                    <#if url_new_account?has_content>
-                    <a class="btn btn-primary btn-sm" style="color:#fff;" title="#i18n{mylutece.xpage.login_form.labelButtonCreateAccount}" href="${url_new_account}">
-                        <span class="fa fa-plus-square-o"></span></i>&nbsp;
-                        #i18n{mylutece.xpage.login_form.labelButtonCreateAccount}
-                    </a>
-                    </#if>
                 </div>
 
                 </#if>
