@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-md-offset-2 col-md-9">
+		<div class="jumbotron">
+		<#if infos?? && infos?size &gt; 0 >
+			<@messages infos=infos />
+			<form class="form" action="${back_url!}" method="post">
+				<div class="col-xs-12 col-sm-offset-3 col-sm-9">
+						<button class="btn btn-primary btn-sm" type="submit" name="action_saveFederation">
+							<i class="fa fa-check"></i>
+							<span class="hidden-xs" >#i18n{federatedatabasefranceconnect.federate_form.btnBackUrl}</span>
+						</button>
+				</div>
+			</form>
+		<#else>
+		<div class="well">
+				<img src="images/local/skin/plugins/federatedatabasefranceconnect/franceconnect_badge.png" alt="FranceConnect badge"/>
+		</div>
+			<h4 class="text-center">Authentifiez vous avec votre compte <span class="text-primary">PALYMA</span> pour l'associer &agrave <img src="images/btn-fc.jpg" title="" alt="">&nbsp;FranceConnect</h4>
+
+			<@messages errors=errors />
+			<form class="form-horizontal" method="post" id="federateFranceConnect"
+				action="jsp/site/Portal.jsp?page=federateFranceConnect">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-3" for="login">#i18n{federatedatabasefranceconnect.federate_form.labelLogin}&nbsp;*:</label>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<input id="login" name="login" class="form-control" type="text" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-3" for="password">#i18n{federatedatabasefranceconnect.federate_form.labelPassword}&nbsp;*:</label>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<input id="password" class="form-control" name="password" type="password" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-offset-3 col-sm-9">
+						<button class="btn btn-primary" type="submit" name="action_saveFederation">
+							<i class="fa fa-check"></i>
+							<span class="hidden-xs" >M'authentifier</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</#if>
+	</div>
+	</div>
+</div>
