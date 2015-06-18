@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+<base href="${base_url}">
+<title>${favourite} - ${page_name}</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta charset="${encoding}">
+<meta http-equiv="Content-Type" content="text/html;charset=${encoding}">
+<meta name="author" content="${meta_author}">
+<meta name="copyright" content="${meta_copyright}">
+<meta name="keywords" content="${meta_keywords}">
+<meta name="description" content="${meta_description}">
+<meta name="generator" content="${meta_generator}">
+<!-- Dublin Core metadatas -->
+<meta name="DC.Creator" content="${meta_author}">
+<meta name="DC.Rights" content="${meta_copyright}">
+<meta name="DC.Subject" content="${meta_keywords}">
+<meta name="DC.Description" content="${meta_description}">
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Le style -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.techie.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/ionicons.min.css" rel="stylesheet">
+<link href="css/page_template_styles.css" rel="stylesheet">
+${plugins_css_links}
+<#-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<#-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<#-- JQUERY UI: Keep for compatibility -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="${base_url}favicon.ico"/>
+<#if isExtendInstalled?? && isExtendInstalled >
+	<#if page_id??>
+		@Extender[${page_id},PAGE,opengraph,{header:true}]@
+	</#if>
+	@Extender[ExtendParameteredId,LogementType,opengraph,{header:true}]@
+</#if>
+${extend_meta!}
+${document_meta?default("<!-- no document_meta -->")}
+${rss?default("<!-- no RSS feed -->")}
+<#-- Included JS Files -->
+<script src="js/jquery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<#-- header -->
+${page_header}
+<#-- end header -->
+<#-- container -->
+	<div id="page-content" class="container-fluid">
+		${social!}
+		${contextinclude!}
+		${contextinclude_1!}
+		<#if page_id &gt; 1 >
+		${page_path}
+		</#if>
+		<#if page_id?? && isExtendInstalled?? && isExtendInstalled >
+			<div class="pull-right">
+				@Extender[${page_id},PAGE,opengraph,{header:false,footer:false}]@
+			</div>
+		</#if>
+		${page_content}
+		${contextinclude_2!}
+	</div>
+	<#-- container -->
+<footer>
+${page_footer}
+</footer>
+<#if isExtendInstalled?? && isExtendInstalled >
+	@Extender[ExtendParameteredId,LogementType,opengraph,{footer:true}]@
+</#if>
+<#-- Le javascript
+    ================================================== -->
+<#-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/typeahead.min.js"></script>
+${plugins_javascript_links}
+</body>
+</html>

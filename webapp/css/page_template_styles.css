@@ -1,0 +1,75 @@
+/******************************************
+/* SPECIFIC LUTECE DEFAULT THEME STYLES   *
+******************************************/
+/* CORE STYLES */
+/* Fix for fixed-nav-bar */
+body{padding-top:90px;}
+#page-content{min-height:550px;}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* img list styles */
+img.thumblist-mini{width:24px;height:24px;}
+img.thumblist-small{width:32px;height:32px;}
+img.thumblist-medium{width:64px;height:64px;}
+img.thumblist-large{width:128px;height:128px;}
+/* END CORE STYLES */
+
+/* avatar default styles */
+.avatar{margin:2px; border:1px solid #000;padding:2px;margin-right:10px; }
+.avatar-mini{width:18px;height:18px;}
+.avatar-small{width:32px;height:32px;}
+.avatar-large{width:64px;height:64px;}
+.avatar-huge{width:128px;height:128px;}
+
+/* Footer */
+footer{ background-color: #242935; color: #fff;margin-top: 2em}
+footer nav div{ margin:1em auto 0 auto;}
+#mdp p a{background: url(../images/gvlogo2.png) no-repeat top left;width:250px;}
+#sitemap {border-left: 1px solid #6c7078;border-right: 1px solid #6c7078;padding-left: 5em;padding-right: 5em}
+#sitemap a {text-decoration: none;}
+#search{border-right: 1px solid #6c7078;}
+#social a{min-width:8em;font-weight: bold}
+
+/* Page demande */
+.qf{min-height: 500px}
+.stat{min-height: 500px}
+.thumbnail{padding:5px;min-height:220px;}
+.thumbnail .caption{text-align: center;}
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+@media screen and (max-width: 560px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+  a.navbar-brand{height:50px;float:none}
+}
