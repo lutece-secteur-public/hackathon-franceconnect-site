@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Demande de carte de stationnement résidentiel</h2>
+    <div class="well">
+      <form method="POST" id="crecheForm" class="form-horizontal" action="jsp/site/Portal.jsp">
+        <input type="hidden" name="page" value="stationnement" />
+        <input type="hidden" name="action" value="processForm" />
+        <div class="form-group">
+          <label for="textinput-0" class="col-sm-3 control-label">Nom</label>
+          <div class="col-sm-8">
+              <input id="textinput-0" name="textinput-0" type="text" placeholder="Nom" class="form-control" disabled value="${lastname!''}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="textinput-1" class="col-sm-3 control-label">Prénom</label>
+          <div class="col-sm-8">
+            <input id="textinput-1" name="textinput-1" type="text" placeholder="Prénom" class="form-control" disabled value="${firstname!''}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="votreAdresse" class="col-sm-3 control-label" >Votre adresse</label>
+          <div class="col-sm-8">
+            <input id="votreAdresse" name="votreAdresse" type="text" placeholder="" class="form-control" disabled value="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="voitures" class="col-sm-3 control-label" >Sélectionner le véhicule concerné</label>
+          <div class="col-sm-8">
+            <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              AB - 123 - CD - Carte valdie jusqu'au 14/04/2016
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              JK - 456 -TH
+            </label>
+          </div>
+          <div class="radio disabled">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+              KZ - 561 -TH
+            </label>
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <p class="form-control-static lead"><strong>Sur la base de ces informations, vous pouvez demander une carte 3 ans gratuite</strong></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-8">
+            <button type="submit" value="Confirmer" class="btn btn-primary">
+              Continuer
+            </button>
+
+        </form>
+      </div>
+  </div>
+</div>
+</div>
+</div>
