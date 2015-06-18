@@ -16,11 +16,6 @@
       <div class="collapse navbar-collapse navbar-ex3-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="jsp/site/Portal.jsp"><i class="fa fa-home"></i> Accueil</a></li>
-          <!--
-          <li>
-            <a href="jsp/site/Portal.jsp?page=crm">Les D&eacute;marches</a>
-          </li>
-        -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les D&eacute;marches <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -29,6 +24,9 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+         ${pageinclude_userlogin?default("<!-- no myLutece plugin installed -->")}
+       </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
 </div>
