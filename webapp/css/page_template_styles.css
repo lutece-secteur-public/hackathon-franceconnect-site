@@ -37,6 +37,8 @@ footer nav div{ margin:1em auto 0 auto;}
 
 /* Page demande */
 .qf{min-height: 500px}
+form#qf .form-group{margin-bottom: 0}
+#qf-thumb .thumbnails{min-height:180px;}
 .stat{min-height: 500px}
 .thumbnail{padding:5px;min-height:310px;}
 .thumbnail .caption{text-align: center;}
