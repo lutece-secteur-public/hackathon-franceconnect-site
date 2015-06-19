@@ -13,7 +13,7 @@
         </#if>
     </#if>
     <li>
-        <a href="${url_account}">
+        <a href="jsp/site/Portal.jsp?page=crm&action=modify_crm_user">
             <span class="glyphicon glyphicon-user"></span>&nbsp;
             #i18n{mylutece.user_login_include.labelWelcome} ${labelUserName!}&nbsp;
         </a>
@@ -30,13 +30,13 @@
             <#list list_authentications as authentication>
                 <#if !authentication.externalAuthentication>
                     <#if authentication.delegatedAuthentication>
-                        <a href="${authentication.doLoginUrl}?auth_provider=${authentication.name}">
+                      <a href="${authentication.doLoginUrl}?auth_provider=${authentication.name}">
                     <#else>
-                        <a href="${authentication.loginPageUrl}&auth_provider=${authentication.name}">
+                      <a href="${authentication.loginPageUrl}&auth_provider=${authentication.name}">
                     </#if>
-                            <span class="glyphicon glyphicon-off"></span>&nbsp;
-                            #i18n{mylutece.user_login_include.labelButton}
-                        </a>
+                        <span class="glyphicon glyphicon-off"></span>&nbsp;
+                          #i18n{mylutece.user_login_include.labelButton}
+                      </a>
                 </#if>
             </#list>
         </#if>
