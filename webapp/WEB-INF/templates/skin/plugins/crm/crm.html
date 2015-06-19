@@ -126,7 +126,6 @@
 					<#if (status_crm.idStatusCRM != 0 || (status_crm.idStatusCRM == 0 && bDisplayDraft = true ))>
 						<#assign demands_list = map_demands_list[""+status_crm.idStatusCRM]>
 						<#if demands_list?has_content>
-							<@paginationAdmin paginator=map_paginator[""+status_crm.idStatusCRM] combo=1 nb_items_per_page=map_nb_items_per_page[""+status_crm.idStatusCRM] />
 							<table class="table">
 								<tr>
 									<th>${status_crm.label}</th>
