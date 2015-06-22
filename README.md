@@ -17,6 +17,8 @@ Voici la couverture fonctionnelle du PoC réalisé pendant le Hackathon :
 ## Architecture technique
 L'ensemble de ce site repose sur les composants LUTECE :
 - Le [plugin FranceConnect](https://github.com/lutece-platform/lutece-auth-plugin-franceconnect) permettant d'accéder aux fournisseurs de données FC.
+- Le [plugin Stationnement](https://github.com/mairie-de-paris/hackathon-franceconnect-poc-stationnement.git) Téléservice de demande de carte de stationnement.
+- Le [plugin QuotientFamille](https://github.com/mairie-de-paris/hackathon-franceconnect-poc-quotientfamille.git) Téléservice de calcul du Quotient Familial.
 - Les plugins génériques CRM, Workflow, Directory, PDFProducer, MyLutece
 
 
