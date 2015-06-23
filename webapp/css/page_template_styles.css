@@ -1,9 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=ABeeZee);
+
 /******************************************
 /* SPECIFIC LUTECE DEFAULT THEME STYLES   *
 ******************************************/
 /* CORE STYLES */
 /* Fix for fixed-nav-bar */
-body{padding-top:90px;color:#000}
+body{padding-top:90px; color:#000; font-size:19px; font-family: 'ABeeZee', sans-serif;}
 #page-content{min-height:550px;}
 .center-block {
   display: block;
@@ -13,6 +15,44 @@ body{padding-top:90px;color:#000}
 .navbar-brand > img {
     margin-top: -20px;
  }
+ .navbar-nav > li > a {padding-top:30px; margin-bottom:10px;}
+ 
+.jumbotron {background: #009688; /* Old browsers */
+background: -moz-linear-gradient(top, #009688 0%, #00c5b3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009688), color-stop(100%,#00c5b3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #009688 0%,#00c5b3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #009688 0%,#00c5b3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #009688 0%,#00c5b3 100%); /* IE10+ */
+background: linear-gradient(to bottom, #009688 0%,#00c5b3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009688', endColorstr='#00c5b3',GradientType=0 ); /* IE6-9 */}
+.jumbotron h1, .jumbotron .h1 {font-weight:bold; color:#fff;}
+.jumbotron .lead {color:#fff;}
+.accordion-group {border:none;}
+.accordion-inner {border-top:none;}
+.panel-body {background: #e2e2e2; /* Old browsers */
+background: -moz-linear-gradient(top, #e2e2e2 0%, #f4f4f4 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #e2e2e2 0%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #e2e2e2 0%,#f4f4f4 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #e2e2e2 0%,#f4f4f4 100%); /* IE10+ */
+background: linear-gradient(to bottom, #e2e2e2 0%,#f4f4f4 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */}
+.panel-footer {background-color:#009688; border-top: 1px solid #009688;}
+.panel-success > .panel-heading {background-color: #009688; border-color: #009688;}
+
+.well {background: #ACDFDA; border-radius:6px; border-color:#acdfda;}
+
+.form-control {height: 41px; padding: 8px 12px; font-size: 19px; border: 1px solid #dafefb;}
+
+legend {font-weight:bold; font-size: 28px; color: #fff;}
+
+.btn img {width:25px; height:25px;}
+.btn-default {color: #494949;}
+.btn-success {background-color: #009688;}
+
+.timing {font-size:150%;}
+
+
 
 /* img list styles */
 img.thumblist-mini{width:24px;height:24px;}
@@ -41,9 +81,12 @@ footer nav div{ margin:1em auto 0 auto;}
 .qf{min-height: 500px}
 form#qf .form-group{margin-bottom: 0}
 #qf-thumb .thumbnails{min-height:180px;}
-.stat{min-height: 500px}
+.stat {min-height: 780px;}
+.stat .label {padding: 2px;}
+.thumbnail {background-color:#dafefb;}
+.thumbnail > img, .thumbnail a > img {padding-top:20px;}
 .thumbnail{padding:5px;min-height:310px;}
-.thumbnail .caption{text-align: center;}
+.thumbnail .caption{text-align: center; font-size:15px;}
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
