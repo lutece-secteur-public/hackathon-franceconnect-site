@@ -3,14 +3,16 @@
 ******************************************/
 /* CORE STYLES */
 /* Fix for fixed-nav-bar */
-body{padding-top:90px;}
+body{padding-top:90px;color:#000}
 #page-content{min-height:550px;}
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
+.navbar-brand > img {
+    margin-top: -20px;
+ }
 
 /* img list styles */
 img.thumblist-mini{width:24px;height:24px;}
