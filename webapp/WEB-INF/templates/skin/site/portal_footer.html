@@ -1,8 +1,7 @@
-<div class="container-fluid">  <nav class="nav">
+<div class="footer">  <nav>
     <div class="row">
       <div class="col-sm-3" id="mdp">
         <p><a href="."><img src="images/banner-franceconnect.png" class="img-responsive center-block" alt="France Connect"></a></p>
-        <p><a href="."><img src="images/ville-logo.png" class="img-responsive center-block" alt="La Grosse Ville"></a></p>
       	<p><a href="fr.lutece.paris.fr"><img src="images/poweredby.jpg" class="img-responsive center-block" alt="La Grosse Ville"></a></p>
       	<#if site_version??>
         	<p class="version">${dskey("sitelabels.site_property.site_version",site_version)}</p>
@@ -11,10 +10,10 @@
       <div class="col-sm-3" id="sitemap">
       	<p class="text-left">#i18n{portal.site.site_map.pathLabel}</p>
       	<ul>
-      		<li><a class="text-info" href=".">Accueil</a>
-      		<li><a class="text-info" href="jsp/site/Portal.jsp?page=helpdesk&faq_id=1">F.A.Q.</a>
-      		<li><a class="text-info" href="jsp/site/Portal.jsp?page=contact">Contact</a>
-      		<li><a class="text-info" href="jsp/site/PopupLegalInfo.jsp">Mentions l&eacute;gales</a>
+      		<li><a href=".">Accueil</a>
+      		<li><a href="jsp/site/Portal.jsp?page=helpdesk&faq_id=1">F.A.Q.</a>
+      		<li><a href="jsp/site/Portal.jsp?page=contact">Contact</a>
+      		<li><a href="jsp/site/PopupLegalInfo.jsp">Mentions l&eacute;gales</a>
       	</ul>
       </div>
       <div class="col-sm-3" id="search">
@@ -32,17 +31,7 @@
         </form>
       </div>
       <div class="col-sm-2" id="social">
-        <p class="text-left">Suivez nous !</p>
-        <p class="text-center">
-          <a href="https://www.facebook.com/paris" target="_blank" class="btn btn-primary">
-            <i class="fa fa-facebook"></i> Facebook
-          </a>
-        </p>
-        <p class="text-center">
-    		  <a href="https://twitter.com/Paris" target="_blank" class="btn btn-primary">
-              <i class="fa fa-twitter"></i> Twitter
-          </a>
-        </p>
+        <p class="text-left">Suivez nous !</p>		<a href="https://www.facebook.com/paris" title="Facebook de Paris (nouvelle fenêtre)" target="_blank">			<span class="fa-stack fa-lg">			  <i class="fa fa-square-o fa-stack-2x"></i>			  <i class="fa fa-facebook fa-stack-1x"></i>			</span>		</a>		<a href="https://twitter.com/Paris" title="Twitter de Paris (nouvelle fenêtre)" target="_blank">			<span class="fa-stack fa-lg">			  <i class="fa fa-square-o fa-stack-2x"></i>			  <i class="fa fa-twitter fa-stack-1x"></i>			</span>		</a>
       </div>
     </div>
     <!-- /.nav navbar-navbar-collapse -->

@@ -1,4 +1,4 @@
-<#-- Get the demand_type from a given id demand type -->
+ <#-- Get the demand_type from a given id demand type -->
 <#function getDemandType demand_types_list id_demand_type>
 	<#if demand_types_list?? && demand_types_list?has_content>
 		<#list demand_types_list as demand_type>
@@ -20,40 +20,27 @@
 			</div>
 		<#else>
 		<p>
-			<a class="btn btn-block btn-primary" href="${url_dologin}" title="Authentifiez Vous">
+			<a class="btn btn-block btn-lg btn-primary" href="${url_dologin}" title="Authentifiez Vous">
 			<i class="fa fa-chevron-circle-right"></i>	Authentifiez Vous
 			</a>
 			<p>
 		</#if>
 		<#if categories_list?has_content>
-			<div class="panel panel-primary" id="panels" data-effect="helix">
-				<div class="panel-heading">#i18n{crm.crm.labelDemandTypesList}</div>
-				<div class="panel-body">
-						<#list categories_list as category>
-							<#assign demand_types = map_demand_types_list[category.code]>
-							<#if demand_types?has_content>
-								<#-- Category = display the legend -->
-								<div class="accordion-group">
-		            	<div class="accordion-heading">
-										<#if category.code != "0">
-											<a class="accordion-toggle" data-toggle="collapse" data-parent="" href="#toggleCat${category.code}">
-												<em class="fa fa-toggle-down fa-fw"></em> ${category.name}
-											</a>
-										</#if>
-									</div>
-									<div id="toggleCat${category.code}" class="accordion-body collapse in">
-										<div class="accordion-inner">
-										<#list demand_types as demand_type>
-											<p class="lead">
-												<a href="jsp/site/plugins/crm/DoOpenDemandType.jsp?id_demand_type=${demand_type.idDemandType}" target="${demand_type.target}">
-													${demand_type.label}
-												</a>
-											</p>
-											<#if demand_type.urlInfo?has_content>
-												<p>
-													<em><a href="${demand_type.urlInfo}">#i18n{crm.crm.labelInfo}</a></em>
-												</p>
-											</#if>
+			<div class="list-group">
+			<#list categories_list as category>
+				<#assign demand_types = map_demand_types_list[category.code]>
+				<#if demand_types?has_content>
+					<#-- Category = display the legend -->
+					<#list demand_types as demand_type>
+						<a class="list-group-item" href="jsp/site/plugins/crm/DoOpenDemandType.jsp?id_demand_type=${demand_type.idDemandType}" target="${demand_type.target}">
+							<h3 class="list-group-item-heading">${demand_type.label}</h3>
+						</a>
+						
+						<#if demand_type.urlInfo?has_content>
+							<p>
+								<em><a href="${demand_type.urlInfo}">#i18n{crm.crm.labelInfo}</a></em>
+							</p>
+						</#if>
 											<#if demand_type.urlContact?has_content>
 												<p>
 													<em><a href="${demand_type.urlContact}">#i18n{crm.crm.labelContact}</a></em>
@@ -65,58 +52,16 @@
 											<#if demand_type.dateEnd??>
 												<p>#i18n{crm.crm.labelDateEnd} : ${demand_type.dateEnd?date}</p>
 											</#if>
-
-										</#list>
-										</div>
-									</div>
-								</div>
-							</#if>
-						</#list>
-					</div>
-					<div class="panel-footer"></div>
-				</div>
-			</#if>
+					</#list>
+				</#if>
+			</#list>
+			</div>
+		</#if>
 	</div>
+	
 	<div class="col-sm-9 col-md-9">
 		<#if crm_user?has_content>
-		<!--
-		<div class="panel panel-primary" id="panels" data-effect="helix">
-			<div class="panel-heading">#i18n{crm.crm.labelDemandsList}</div>
-			<div class="panel-body">
-				<form class="form-horizontal" action="jsp/site/Portal.jsp?page=crm" method="post" name="form">
-					<div class="form-group">
-						<label class="control-label col-sm-3" for="filter_type_demand">#i18n{crm.crm.filterTypeDemandLabel} : </label>
-						<div class="col-sm-3">
-							<@comboSiteWithParams name="demandType" default_value="${(filter.idDemandType)!}" additionalParameters=" class=\"form-control\"" items=demandTypesRefList />
-						</div>
-					</div>
-					<div class="form-group">
-					 <label class="control-label col-sm-3" for="filter_modification_date">#i18n{crm.crm.filterModificationDateLabel} : </label>
-					 <div class="col-sm-2">
-						<input type="text" class="form-control" value="${modificationDate!}" name="modificationDate" id="filter_modification_date" size="7" maxlength="10" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-3" for="filter_notification">#i18n{crm.crm.filterNotificationLabel} : </label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" value="${(filter.notification)!}" name="notification" id="filter_notification"/ size="40" maxlength="255">
-							<span class="help-block">#i18n{crm.crm.filterNotificationLabelComment}</span>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-3 col-md-9">
-							<button type="submit" value="#i18n{crm.crm.buttonSearch}" name="search" class="btn btn-primary" >
-								<i class="fa fa-search"></i> #i18n{crm.crm.buttonSearch}
-							</button>
-							<a class="btn btn-default" href="jsp/site/Portal.jsp?page=crm" >
-								<i class="fa fa-refresh"></i> #i18n{crm.crm.buttonReinitialization}
-							</a>
-						</div>
-					</div>
-				</form>
-				</div>
-			</div>
-		-->
+
 			<div class="panel panel-success" id="panels" data-effect="helix">
 				<div class="panel-heading">#i18n{crm.crm.labelDemandsList}</div>
 				<div class="panel-body">
@@ -195,5 +140,6 @@
 				</div>
 	 		</#if>
 		</div>
+	
 </div>
 <@getDatePickerBootstrap idField="filter_modification_date" language=locale.language />
