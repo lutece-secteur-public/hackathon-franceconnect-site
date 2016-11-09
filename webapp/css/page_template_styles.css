@@ -51,7 +51,7 @@
 .icon-play:before{content:"\e611"}
 
 html {position:relative; min-height:100%;}
-body {min-height:100%; height:100%; font-family:"Montserrat",sans-serif; font-weight:300; background-color:#fff; color:#fff;} 
+body {min-height:100%; height:100%; font-family:"Montserrat",sans-serif; font-weight:300; background-color:#fff; color:#fff; font-size:1.6rem;} 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family:"Montserrat",sans-serif;}
 #page-content {margin-top:60px; margin-bottom: 160px;}
 
@@ -59,8 +59,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family:"Montserrat",s
 border-left: 6px solid #F8E273; padding: 15px 10px 15px 26px;}
 
 /** Bootstrap override **/
-a {color:#fff;}
-a:focus, a:hover, a:visited {color:#fff; text-decoration:none;}
+a {color:#000;}
+a:focus, a:hover, a:visited {color:#000; text-decoration:underline;}
 a:focus {outline:unset;}
 .btn.focus, .btn:focus, .btn:hover {color:#fff;}
 .jumbotron, .well {background: transparent linear-gradient(to bottom, #018c8a 0%, #02afad 150%) repeat scroll 0% 0%;}
@@ -149,10 +149,10 @@ ul.links-items {padding-left:0px; margin:20px 0 20px 0;}
 .btn-danger, .btn-default, .btn-info, .btn-primary, .btn-success, .btn-warning {text-shadow:none; box-shadow:none; background-image:none;}
 
 /*** BUTTON PRIMARY: ROSE ***/
-.btn-primary, .btn-primary:focus, .btn-primary:hover {background-color:#df225a;}
-.btn-primary:after {background-color:#b41a48;}
+.btn-primary, .btn-primary:focus, .btn-primary:hover {background-color:#127978;}
+.btn-primary:after {background-color:#0f6564;}
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.focus:active, .btn-primary:active:focus, .btn-primary:active:hover, .open > .dropdown-toggle.btn-primary.focus, .open > .dropdown-toggle.btn-primary:focus, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active {
-color:#fff; background-color:#b41a48; border-color:#b41a48;}
+color:#fff; background-color:#0f6564; border-color:#0f6564;}
 
 /*** BUTTON DEFAULT: BLANC ***/
 .btn-default, .btn-default:focus, .btn-default:hover{background-color:#fff; color:#000;}
@@ -186,8 +186,8 @@ color:#fff; background-color:#2b7250; border-color:#2b7250;}
 color:#fff; background-color:#af5949; border-color:#af5949;}
 
 /* FORMS */
-input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
-border:1px solid #fff!important; border-radius:5px; font-size:18px!important; padding:5px 10px!important;}
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input, select{
+border:1px solid #169190!important; border-radius:5px; font-size:18px!important; padding:5px 10px!important;}
 .navbar .form-control {height:60px;}
 .navbar .btn {padding:20px 22px; background-color:#f2f2f2;}
 .form-control {border: 1px solid #fff; border-radius:5px; box-shadow:none;}
@@ -196,7 +196,7 @@ border:1px solid #fff!important; border-radius:5px; font-size:18px!important; pa
 .form-control:-ms-input-placeholder {color:#4d4d4d;}
 .form-control::-webkit-input-placeholder {color:#4d4d4d;}
 .input-sm, select.input-sm {height:50px;}
-.input-sm {color:#0c518a; font-size:18px;}
+.input-sm {font-size:18px;}
 .input-group-addon {background-color:#fff; border:0px solid #fff; color:#0c518a;}
 div.map {margin-top:15px!important; border:1px solid #032d52!important;}
 .form-comment {font-size:110%;}
@@ -292,14 +292,32 @@ z-index: 2;
 }
 .sections-list-button:hover .sections-list-button-title, .sections-list-button:hover .sections-list-button-text {color: #F2F2F2;}
 
+/*** Palyma ***/
+.panel-success {color:#000; border-color:#169190;}
+.panel-success > .panel-heading {background-color:#169190; color:#fff;}
+.table {color:#000;}
+.btn-primary {color:#fff!important;}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: #169190;
+    border-color: #169190;
+}
+.pagination > li > a, .pagination > li > span {
+    color: #169190;
+}
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: #169190;
+}
+form {color:#000;}
+
+
 
 /*** FOOTER ***/
-footer {background-color:#e6e6e6; padding-top:15px; padding-bottom:15px; position:absolute; bottom:0; width:100%;}
+footer {background-color:#e6e6e6; padding-top:15px; padding-bottom:15px; position:absolute; bottom:0; width:100%; color:#000;}
 footer ul {list-style-type:none; padding:0; margin:0;}
 footer ul li a{display:block; text-decoration:none; color:#333;}
 footer ul li a:focus, footer ul li a:hover{color:#333; text-decoration:underline;}
-footer, footer a,footer a:visited {color:#000;}
- footer a:hover {color:#333;}
+footer a,footer a:visited {}
+footer a:hover {color:#169190;}
 
 
 
@@ -385,8 +403,8 @@ header {margin-bottom:0px;}
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 .layout-wrapper, .footer{max-width:992px;}
-input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input, textarea, select {width:570px!important;}
-input[type="text"], .input-group {max-width:570px;}
+input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input, textarea, select {/* width:570px!important; */}
+input[type="text"], .input-group {/* max-width:570px; */}
 
 /* PERSON BLOCK */
 .person-block-title {padding-bottom:20px; font-size:22px;}
