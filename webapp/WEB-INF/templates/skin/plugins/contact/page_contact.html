@@ -1,0 +1,78 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-success">
+			<div class="panel-heading"><h1>#i18n{contact.page_contact.pageTitle}</h1></div>
+			<div class="panel-body">
+			
+            <form class="form-horizontal" id="contact_form" action="jsp/site/plugins/contact/DoSendMessage.jsp" method="post">
+                <input type="hidden" name="page" value="contact">
+                <input type="hidden" name="portal_url" value="${portal_url}">
+                <input type="hidden" name="id_contact_list" value="${id_contact_list}">
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="visitor_email">#i18n{contact.page_contact.visitorEmail} * :</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <input type="text" name="visitor_email" id="visitor_email" class="form-control input-sm" maxlength="100" value="${visitor_email}">
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="visitor_last_name">#i18n{contact.page_contact.visitorLastName} * :</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <input type="text" name="visitor_last_name" id="visitor_last_name" class="form-control input-sm" maxlength="50" <#if mylutece_user??>value="${mylutece_user.getUserInfo( 'user.name.family' )}"<#else>value="${visitor_last_name}"</#if>/> 
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="visitor_first_name">#i18n{contact.page_contact.visitorFirstName} * :</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <input type="text" name="visitor_first_name" id="visitor_first_name" class="form-control input-sm" maxlength="50" <#if mylutece_user??>value="${mylutece_user.getUserInfo( 'user.name.given' )}"<#else>value="${visitor_first_name}"</#if> />
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="visitor_address" >#i18n{contact.page_contact.visitorAddress} :</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <input type="text" name="visitor_address" id="visitor_address" value="${visitor_address}"  maxlength="120" class="form-control input-sm">
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="" >#i18n{contact.page_contact.comboLabel} * :</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <#assign cssComboParams>class="${style_contact?if_exists} input-xlarge"</#assign>      
+                    <@comboWithParams name="contact" default_value="${default_contact}" additionalParameters="class='form-control input-sm'" items=contacts_list/>
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="message_object">#i18n{contact.page_contact.messageObject} * :</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <input type="text" name="message_object" id="message_object" value="${message_object}" maxlength="120" class="form-control input-sm">
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-12 col-md-3 col-lg-3" for="message">#i18n{contact.page_contact.message} * #i18n{contact.page_contact.characterMax}</label><br>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <textarea name="message" maxlength="1000" id="message" rows="6" class="form-control input-sm ${style_message?if_exists}">${message}</textarea>
+                    </div>  
+                </div>
+                <#if is_active_captcha>
+                    <div class="form-group">             
+                    ${captcha}
+                    </div>
+                </#if>
+                <#if alert?exists>
+                    <div class="alert alert-error">${alert}</div>
+                </#if>
+				<p class="help-block">* #i18n{contact.page_contact.mandatoryFields}</p>
+            <div class="form-group">
+				<div class="col-xs-12 col-sm-offset-3 col-md-offset-3 col-lg-offset-33">
+                <button class="btn btn-primary btn-lg" type="submit" name="save">
+                    <i class="glyphicon glyphicon-envelope"></i>&nbsp;#i18n{contact.page_contact.buttonSend}
+                </button>
+                <button class="btn btn-primary btn-lg" type="reset" name="Reset">
+                    <i class="glyphicon glyphicon-refresh"></i>&nbsp;#i18n{contact.page_contact.buttonReset}
+                </button>
+				</div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+

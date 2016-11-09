@@ -1,60 +1,55 @@
 <div class="row">
 	<div class="col-sm-12">
-		<a class="btn btn-primary pull-right" href="jsp/site/Portal.jsp?page=crm" title="#i18n{crm.view_notification.buttonBack}">
-			<i class="fa fa-times"></i> #i18n{crm.view_notification.buttonBack}
-		</a>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<div class="jumbotron">
-		<h2>${demand_type.label}</h2>
-		<#if notifications_list?has_content>
-			<table class="table table-hover table-responsive">
-				<thead>
-				<tr>
-					<th>#i18n{crm.manage_notifications.labelSender}</th>
-					<th>#i18n{crm.manage_notifications.labelObject}</th>
-					<th>#i18n{crm.manage_notifications.labelReceived}</th>
-				</tr>
-			</thead>
-			<tbody>
-				<#list notifications_list as notification>
+		<div class="panel panel-success">
+			<div class="panel-heading"><h1>${demand_type.label}</h1></div>
+			<div class="panel-body">
+			<#if notifications_list?has_content>
+				<table class="table table-hover table-responsive">
+					<thead>
 					<tr>
-						<td>
-							${notification.sender}
-						</td>
-						<td>
-							<a href="jsp/site/Portal.jsp?page=crm&amp;action=view_notification&amp;id_notification=${notification.idNotification}">
-
+						<th>#i18n{crm.manage_notifications.labelSender}</th>
+						<th>#i18n{crm.manage_notifications.labelObject}</th>
+						<th>#i18n{crm.manage_notifications.labelReceived}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<#list notifications_list as notification>
+						<tr>
+							<td>
+								${notification.sender}
+							</td>
+							<td>
+								<#if notification.isRead()>
+									<i class="fa fa-envelope-o"></i>
+									<a href="jsp/site/Portal.jsp?page=crm&amp;action=view_notification&amp;id_notification=${notification.idNotification}">
+										${notification.object}
+									</a>
+								<#else>
+									<i class="fa fa-envelope"></i>
+									<a href="jsp/site/Portal.jsp?page=crm&amp;action=view_notification&amp;id_notification=${notification.idNotification}"><strong>${notification.object}</strong></a>
+								</#if>
+							</td>
+							<td>
+								<span class="fa fa-clock-o"></span>
 								<#if notification.isRead(  )>
-								<i class="fa fa-envelope-o"></i>
-									${notification.object}
+									${notification.dateCreation?date}
 								<#else>
 									<strong>
-										<i class="fa fa-envelope"></i>
-										${notification.object}
+									${notification.dateCreation?date}
 									</strong>
 								</#if>
-							</a>
-						</td>
-						<td>
-							<span class="fa fa-clock-o"></span>
-							<#if notification.isRead(  )>
-								${notification.dateCreation?date}
-							<#else>
-								<strong>
-								${notification.dateCreation?date}
-								</strong>
-							</#if>
-						</td>
-					</tr>
-				</#list>
-			</table>
-			<tbody>
-		<#else>
-			<p class="lead">#i18n{crm.manage_notifications.messageNoNotifications}</p>
-		</#if>
+							</td>
+						</tr>
+					</#list>
+				<tbody>
+				</table>
+			<#else>
+				<p class="lead">#i18n{crm.manage_notifications.messageNoNotifications}</p>
+			</#if>
+				<a class="btn btn-primary btn-lg" href="jsp/site/Portal.jsp?page=crm" title="#i18n{crm.view_notification.buttonBack}">
+					<i class="fa fa-times"></i> #i18n{crm.view_notification.buttonBack}
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

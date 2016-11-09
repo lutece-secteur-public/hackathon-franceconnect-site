@@ -1,53 +1,59 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12 col-md-12">
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-success">
+			<div class="panel-heading"><h1>Mon Compte</h1></div>
+			<div class="panel-body">
+			
 			<form class="form-horizontal" action="jsp/site/Portal.jsp" method="post">
 				<input type="hidden" name="page" value="crm">
 				<input type="hidden" name="action" value="do_modify_crm_user">
 				<div class="form-group">
 					<label class="control-label col-sm-2 col-md-2" for="user.name.given">#i18n{crm.modify_crm_user.labelFirstName} : </label>
-					<div class="col-sm-3 col-md-3">
-						<input type="text" class="form-control" name="user.name.given" size="50" maxlength="255" value="${crm_user.getUserAttributeValue('user.name.given')}" />
+					<div class="col-sm-6 col-md-6">
+						<input type="text" class="form-control input-sm" name="user.name.given" size="50" maxlength="255" value="${crm_user.getUserAttributeValue('user.name.given')}" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2 col-md-2" for="user.name.family">#i18n{crm.modify_crm_user.labelLastName} : </label>
-					<div class="col-sm-3 col-md-3">
-						<input type="text" class="form-control" name="user.name.family" size="50" maxlength="255" value="${crm_user.getUserAttributeValue('user.name.family')}" />
+					<div class="col-sm-6 col-md-6">
+						<input type="text" class="form-control input-sm" name="user.name.family" size="50" maxlength="255" value="${crm_user.getUserAttributeValue('user.name.family')}" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2 col-md-2" for="user.business-info.online.email">#i18n{crm.modify_crm_user.labelEmail} : </label>
-					<div class="col-sm-3 col-md-3">
-						<input type="email" class="form-control" name="user.business-info.online.email" size="50" maxlength="255" value="${crm_user.getUserAttributeValue('user.business-info.online.email')}" />
+					<div class="col-sm-6 col-md-6">
+						<input type="email" class="form-control input-sm" name="user.business-info.online.email" size="50" maxlength="255" value="${crm_user.getUserAttributeValue('user.business-info.online.email')}" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2 col-md-2" for="user.business-info.telecom.telephone.number">#i18n{crm.modify_crm_user.labelPhoneNumber} : </label>
-					<div class="col-sm-3 col-md-3">
-						<input type="text" class="form-control" name="user.business-info.telecom.telephone.number" size="10" maxlength="100" value="${crm_user.getUserAttributeValue('user.business-info.telecom.telephone.number')}" />
+					<div class="col-sm-6 col-md-6">
+						<input type="text" class="form-control input-sm" name="user.business-info.telecom.telephone.number" size="10" maxlength="100" value="${crm_user.getUserAttributeValue('user.business-info.telecom.telephone.number')}" />
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2 col-md-2" for=""></label>
-					<div class="col-sm-3 col-md-3">
-						<a href="jsp/site/Portal.jsp?page=federateFranceConnect" title="#i18n{crm.modify_crm_user.buttonBack}"class="btn btn-labeled btn-danger">
-                <span class="btn-label">
-                  <img src="images/btn-fc.jpg" alt="" title="">
-                </span>
-							 Supprimer la f&eacute;d&eacute;ration avec FranceConnect
+					<label class="control-label col-sm-2 col-md-2 sr-only" for="">Supprimer la f&eacute;d&eacute;ration avec FranceConnect</label>
+					<div class="col-sm-6 col-md-6">
+						<a href="jsp/site/Portal.jsp?page=federateFranceConnect" title="#i18n{crm.modify_crm_user.buttonBack}" class="btn btn-primary btn-lg btn-block">
+							<span class="btn-label">
+							  <img src="images/btn-fc.jpg" alt="" title="">
+							</span>
+							Supprimer la f&eacute;d&eacute;ration avec FranceConnect
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-success" value="#i18n{portal.util.labelModify}" >
-						<i class="fa fa-check"></i> #i18n{portal.util.labelModify}
-					</button>
-					<a class="btn btn-default" href="jsp/site/Portal.jsp?page=crm" title="#i18n{crm.modify_crm_user.buttonBack}">
-						<i class="fa fa-times"></i> #i18n{crm.modify_crm_user.buttonBack}
-					</a>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary btn-lg" value="#i18n{portal.util.labelModify}" >
+							<i class="fa fa-check"></i> #i18n{portal.util.labelModify}
+						</button>
+						<a class="btn btn-default btn-lg" href="jsp/site/Portal.jsp?page=crm" title="#i18n{crm.modify_crm_user.buttonBack}">
+							<i class="fa fa-times"></i> #i18n{crm.modify_crm_user.buttonBack}
+						</a>
+					</div>
 				</div>
 			</form>
 		</div>
 	</div>
+</div>
 </div>

@@ -12,8 +12,9 @@
 	<div class="col-sm-3 col-md-3">
 		<#if crm_user?has_content>
 			<div class="well">
-				<p class="text-success"><i class="fa fa-user"></i>  ${crm_user.getUserAttributeValue("user.name.given")} ${crm_user.getUserAttributeValue("user.name.family")}
-					<a class="btn btn-primary btn-xs" href="jsp/site/Portal.jsp?page=crm&amp;action=modify_crm_user">
+				<p class="lead"><i class="fa fa-user"></i>  ${crm_user.getUserAttributeValue("user.name.given")} ${crm_user.getUserAttributeValue("user.name.family")}</p>
+				<p>
+					<a class="btn btn-default btn-lg btn-block" href="jsp/site/Portal.jsp?page=crm&amp;action=modify_crm_user">
 						#i18n{crm.crm.labelMyAccount}
 					</a>
 				</p>
@@ -63,7 +64,7 @@
 		<#if crm_user?has_content>
 
 			<div class="panel panel-success" id="panels" data-effect="helix">
-				<div class="panel-heading">#i18n{crm.crm.labelDemandsList}</div>
+				<div class="panel-heading"><h1>#i18n{crm.crm.labelDemandsList}</h1></div>
 				<div class="panel-body">
 					<#list status_crm_list as status_crm>
 					<!-- Doesn't display the draft bloc if the checkbox is not checked in the parameters -->
