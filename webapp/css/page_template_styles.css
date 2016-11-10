@@ -308,7 +308,7 @@ z-index: 2;
     color: #169190;
 }
 form {color:#000;}
-
+.well h1, .well h2, .well h3, .well h4, .well h5, .well h6, .well form {color:#fff;}
 
 
 /*** FOOTER ***/

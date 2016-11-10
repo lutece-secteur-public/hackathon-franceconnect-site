@@ -12,22 +12,23 @@
 	<div class="col-sm-3 col-md-3">
 		<#if crm_user?has_content>
 			<div class="well">
-				<p class="lead"><i class="fa fa-user"></i>  ${crm_user.getUserAttributeValue("user.name.given")} ${crm_user.getUserAttributeValue("user.name.family")}</p>
+				<h2 class="lead"><i class="fa fa-user"></i>  ${crm_user.getUserAttributeValue("user.name.given")} ${crm_user.getUserAttributeValue("user.name.family")}</h2>
 				<p>
-					<a class="btn btn-default btn-lg btn-block" href="jsp/site/Portal.jsp?page=crm&amp;action=modify_crm_user">
+					<a class="btn btn-primary btn-lg btn-block" href="jsp/site/Portal.jsp?page=crm&amp;action=modify_crm_user">
 						#i18n{crm.crm.labelMyAccount}
 					</a>
 				</p>
 			</div>
 		<#else>
-		<p>
+		<h2 class="lead">
 			<a class="btn btn-block btn-lg btn-primary" href="${url_dologin}" title="Authentifiez Vous">
 			<i class="fa fa-chevron-circle-right"></i>	Authentifiez Vous
 			</a>
-			<p>
+		</h2>
 		</#if>
 		<#if categories_list?has_content>
 			<div class="list-group">
+			<h2 class="sr-only">Liste des téléservices</h2>
 			<#list categories_list as category>
 				<#assign demand_types = map_demand_types_list[category.code]>
 				<#if demand_types?has_content>
@@ -71,18 +72,18 @@
 					<#if (status_crm.idStatusCRM != 0 || (status_crm.idStatusCRM == 0 && bDisplayDraft = true ))>
 						<#assign demands_list = map_demands_list[""+status_crm.idStatusCRM]>
 						<#if demands_list?has_content>
-							<table class="table">
+							<table class="table" role="presentation">
 								<tr>
-									<th>${status_crm.label}</th>
+									<th scope="col">${status_crm.label}</th>
 									<th>
 										#i18n{crm.crm.columnDate}
 										<@sort jsp_url="jsp/site/Portal.jsp?page=crm&session=true&id_status=${status_crm.idStatusCRM}" attribute="dateModification" />
 									</th>
-									<th>#i18n{crm.crm.columnStatus}</th>
+									<th scope="col">#i18n{crm.crm.columnStatus}</th>
 									<#if status_crm.idStatusCRM = 0>
 										<th>#i18n{crm.crm.columnActions}</th>
 									</#if>
-									<th>
+									<th scope="col">
 										#i18n{crm.crm.columnNotification}
 										<@sort jsp_url="jsp/site/Portal.jsp?page=crm&session=true&id_status=${status_crm.idStatusCRM}" attribute="unreadNotification" />
 									</th>
@@ -136,7 +137,7 @@
 						<li>Acc&eacute;der aux diff&eacute;rentes d&eacute;marches administratives en ligne de la ville de Palyma</li>
 						<li>Retrouver l'historique de vos demandes dans votre espace personnel</li>
 						<li>Etre inform&eacute; de l'&eacute;tat d'avancement de l'instruction de vos demandes</li>
-						<li>De prendre rendez-vous avec les services de la Ville</li>
+						<li>Prendre rendez-vous avec les services de la Ville</li>
 					</ul>
 				</div>
 	 		</#if>
