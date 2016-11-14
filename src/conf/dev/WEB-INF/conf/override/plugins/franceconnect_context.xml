@@ -20,7 +20,7 @@
     <bean id="franceconnect.client" class="fr.paris.lutece.plugins.franceconnect.oidc.AuthClientConf">
         <property name="clientId" value="6d0812c86c09f94dad5555a760d3eb931c458aa7aa626c3f"/>
         <property name="clientSecret" value="79400d711573b218395e17134a46e1f6b6e1251076aa80f6"/>
-        <property name="redirectUri" value="localhost:8084/palyma/servlet/plugins/franceconnect/callback"/>
+        <property name="redirectUri" value="https://dev.lutece.paris.fr/hackathon-dev/servlet/plugins/franceconnect/callback"/>
     </bean>       
     
     <bean id="franceconnect.callbackHandler" class="fr.paris.lutece.plugins.franceconnect.web.CallbackHandler" >
