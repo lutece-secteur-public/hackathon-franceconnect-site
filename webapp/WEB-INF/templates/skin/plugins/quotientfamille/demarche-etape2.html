@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+      <h1 style="color:#000;">Quotient familial et tarifs</h1>
+  </div>
+</div>
+<form id="qf" method="POST" id="crecheForm" class="form-horizontal" action="jsp/site/Portal.jsp">
+	<input type="hidden" name="page" value="quotientfamille">
+	<input type="hidden" name="action" value="processForm">
+	
+	<div class="row">
+		<div class="col-xs-12 col-sm-3 col-md-4">
+			<div class="well" data-effect="helix">
+				<h2 class="lead">Vos infos</h2>
+				<p><i class="fa fa-user"></i> ${firstname!''} ${lastname!''}</p>
+				<p>${address!''}</p>
+				<dl>
+					<dt>Revenu de r&eacute;f&eacute;rence</dt>
+					<dd>${qf.revenuFiscalReference!} &euro;</dd>
+					<dt>Nombre de parts</dt>
+					<dd>${qf.nombreParts!}</dd>
+					<dt>Votre quotient familial</dt>
+					<dd>${qf.quotient!}</dd>
+					<dt>Votre tranche tarifaire</dt>
+					<dd>${qf.tranche!}</dd>
+				</dl>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-9 col-md-9">
+			<div class="panel panel-success">
+				<div class="panel-heading"><h2>Tarifs applicables avec votre quotient familial</h2></div>
+				<div class="panel-body">
+					<p>Classes de d&eacute;couverte par jour : 13,58 &euro;</p>
+					<p>Centre de loisirs :</p>
+					  <ul>
+						<li>Mercredi apr&egrave;s-midi : 2,67 &euro;</li>
+						<li>Vacances sans repas : 4,45 &euro;</li>
+						<li>Vacances avec repas : 8,07 &euro;</li>
+						<li>Etudes surveill&eacute;es : 5,70 &euro;</li>
+						  <li>Ateliers bleus du soir : 11,93 &euro;</li>
+					  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
