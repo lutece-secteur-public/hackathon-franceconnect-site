@@ -11,16 +11,16 @@
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
     
     <bean id="franceconnect.server" class="fr.paris.lutece.plugins.franceconnect.oidc.AuthServerConf">
-        <property name="issuer" value="http://fcp.integ01.dev-franceconnect.fr"/>
+        <property name="issuer" value="https://pp.dev-franceconnect.fr"/>
         <property name="authorizationEndpointUri"
-                  value="https://fcp.integ01.dev-franceconnect.fr/api/v1/authorize"/>
-        <property name="tokenEndpointUri" value="https://fcp.integ01.dev-franceconnect.fr/api/v1/token"/>
+                  value="https://pp.dev-franceconnect.fr/api/v1/authorize"/>
+        <property name="tokenEndpointUri" value="https://pp.dev-franceconnect.fr/api/v1/token"/>
     </bean> 
     
     <bean id="franceconnect.client" class="fr.paris.lutece.plugins.franceconnect.oidc.AuthClientConf">
-        <property name="clientId" value="6d0812c86c09f94dad5555a760d3eb931c458aa7aa626c3f"/>
-        <property name="clientSecret" value="79400d711573b218395e17134a46e1f6b6e1251076aa80f6"/>
-        <property name="redirectUri" value="https://dev.lutece.paris.fr/hackathon-dev/servlet/plugins/franceconnect/callback"/>
+        <property name="clientId" value="b4158126b9e94703002c70acf3cfb5b5f8a63ef14cd7a1f521a70c467ce4c5f8"/>
+        <property name="clientSecret" value="91061efb3baa3be56bd92a258b7283588386af8d826873b75b3c65665b9885d3"/>
+        <property name="redirectUri" value="https://guichetmsp.dev.apps.paris.fr/guichetmsp/"/>
     </bean>       
     
     <bean id="franceconnect.callbackHandler" class="fr.paris.lutece.plugins.franceconnect.web.CallbackHandler" >
@@ -31,7 +31,7 @@
     
     <bean id="franceconnect.userInfoClient" class="fr.paris.lutece.plugins.franceconnect.oidc.dataclient.UserInfoDataClient">
         <property name="name" value="userinfo" />
-        <property name="dataServerUri" value="https://fcp.integ01.dev-franceconnect.fr/api/v1/userinfo"/>
+        <property name="dataServerUri" value="https://pp.dev-franceconnect.fr/api/v1/userinfo"/>
         <property name="tokenMethod" value="HEADER"/>
         <property name="scope">
             <set value-type="java.lang.String">
