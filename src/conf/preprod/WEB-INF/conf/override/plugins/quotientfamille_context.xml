@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+
+    <bean id="quotientfamille.dataClientUser" class="fr.paris.lutece.plugins.quotientfamille.dataclient.UserDataClient">
+        <property name="name" value="quotientfamille.user" />
+        <property name="dataServerUri" value="https://pp.dev-franceconnect.fr/api/v1/userinfo"/>
+        <property name="tokenMethod" value="HEADER"/>
+        <property name="scope">
+            <set value-type="java.lang.String">
+                <value>openid</value>
+                <value>profile</value>
+                <value>email</value>
+                <value>address</value>
+                <value>phone</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="quotientfamille.dataClientRevenu" class="fr.paris.lutece.plugins.quotientfamille.dataclient.RevenuDataClient">
+        <property name="name" value="quotientfamille.revenu" />
+        <property name="dataServerUri" value="https://cft.integration.impots.gouv.fr/impotparticulier/os1/2015"/>
+        <property name="tokenMethod" value="HEADER"/>
+        <property name="scope">
+            <set value-type="java.lang.String">
+                <value>dgfip_rfr</value>
+                <value>dgfip_nbpart</value>
+            </set>
+        </property>
+    </bean>
+
+</beans>
