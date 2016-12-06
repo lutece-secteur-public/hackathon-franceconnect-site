@@ -13,6 +13,7 @@
 				<h2 class="lead">Vos infos</h2>
 				<p><i class="fa fa-user"></i> ${firstname!''} ${lastname!''}</p>
 				<p>${address!''}</p>
+				<#if qf??>
 				<dl>
 					<dt>Revenu de r&eacute;f&eacute;rence</dt>
 					<dd>${qf.revenuFiscalReference!} &euro;</dd>
@@ -23,10 +24,12 @@
 					<dt>Votre tranche tarifaire</dt>
 					<dd>${qf.tranche!}</dd>
 				</dl>
+				</#if>
 			</div>
 		</div>
 		
 		<div class="col-xs-12 col-sm-12 col-md-8">
+			<#if qf??>
 			<div class="panel panel-success">
 				<div class="panel-heading"><h2>Tarifs applicables avec votre quotient familial</h2></div>
 				<div class="panel-body">
@@ -41,6 +44,9 @@
 					  </ul>
 				</div>
 			</div>
+			<#else>
+			<div class="alert alert-danger" role="alert">Erreur lors de la récupération des infos depuis la dgfip.</div>
+			</#if>
 		</div>
 	</div>
 </form>
