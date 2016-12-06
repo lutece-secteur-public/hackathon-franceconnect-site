@@ -11,10 +11,10 @@
             <label for="sexe" class="col-sm-3 control-label" >Civilit&eacute;</label>
           <div class="col-sm-8">
             <label class="radio-inline disabled">
-                <input type="radio" name="sexe" id="sexeF" value="0" checked disabled>Madame
+                <input type="radio" name="sexe" id="sexeF" value="0"<#if gender?? && gender=="female"> checked</#if> disabled>Madame
             </label>
             <label class="radio-inline disabled">
-              <input type="radio" name="sexe" id="sexeM" value="option2" disabled>Monsieur
+              <input type="radio" name="sexe" id="sexeM" value="option2"<#if gender?? && gender=="male"> checked</#if> disabled>Monsieur
             </label>
           </div>
         </div>
