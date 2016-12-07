@@ -11,10 +11,14 @@
 		<div class="col-xs-12 col-sm-12 col-md-4">
 			<div class="well" style="color:#fff;">
 				<h2 class="lead">Vos infos</h2>
-				<p><i class="fa fa-user"></i> ${firstname!''} ${lastname!''}</p>
-				<p>${address!''}</p>
-				<#if qf??>
 				<dl>
+					<dt>Prénom</dt>
+					<dd>${firstname!''}</dd>
+					<dt>Nom</dt>
+					<dd>${lastname!''}</dd>
+					<dt>Adresse</dt>
+					<dd>${address!''}</dd>
+					<#if qf??>
 					<dt>Revenu de r&eacute;f&eacute;rence</dt>
 					<dd>${qf.revenuFiscalReference!} &euro;</dd>
 					<dt>Nombre de parts</dt>
@@ -23,8 +27,8 @@
 					<dd>${qf.quotient!}</dd>
 					<dt>Votre tranche tarifaire</dt>
 					<dd>${qf.tranche!}</dd>
+					</#if>
 				</dl>
-				</#if>
 			</div>
 		</div>
 		
