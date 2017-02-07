@@ -12,44 +12,41 @@
                         <div class="well" style="color:#fff;">
                                 <h2 class="lead">Vos infos</h2>
                                 <dl>
-                                        <dt>Prénom</dt>
-                                        <dd>${firstname!''}</dd>
                                         <dt>Nom</dt>
-                                        <dd>${lastname!''}</dd>
+                                        <dd>${form.TPpNom!'BOUCHONFM DELL'}</dd>
+                                        <dt>Prénom</dt>
+                                        <dd>${form.TPpPrenom!'BOUCHONFM DELL BOB'}</dd>
                                         <dt>Adresse</dt>
-                                        <dd>${address!''}</dd>
-                                        <#if qf??>
-                                        <dt>Revenu de r&eacute;f&eacute;rence</dt>
-                                        <dd>${qf.revenuFiscalReference!} &euro;</dd>
-                                        <dt>Nombre de parts</dt>
-                                        <dd>${qf.nombreParts!}</dd>
-                                        <dt>Votre quotient familial</dt>
-                                        <dd>${qf.quotient!}</dd>
-                                        <dt>Votre tranche tarifaire</dt>
-                                        <dd>${qf.tranche!}</dd>
-                                        </#if>
+                                        <dd>${form.adresse!'BOUCHONFM 2 rue foo'}</dd>
+                                        <dt>Immatriculation</dt>
+                                        <dd>${form.VNumeroImmatriculation!'BOUCHONFM KZ-561-TH'}</dd>
+                                        <dt>Marque du véhicule  </dt>
+                                        <dd>${form.VMarque!'BOUCHONFM MARQUE'}</dd>
+                                        <dt>Modèle du véhicule</dt>
+                                        <dd>${form.VDenominationCommerciale!'BOUCHONFM MODELE'}</dd>
+                                        <dt>Source SIV</dt>
+                                        <dd><pre>${form.source!'BOUCHONFM source SIV'}</pre></dd>
                                 </dl>
                         </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-8">
-                        <#if qf??>
+                        <#if form.source != "BOUCHON: source">
                         <div class="panel panel-success">
-                                <div class="panel-heading"><h2>Tarifs applicables avec votre quotient familial</h2></div>
+                                <div class="panel-heading"><h2>Fin de démarche</h2></div>
                                 <div class="panel-body">
-                                        <p>Classes de d&eacute;couverte par jour : 13,58 &euro;</p>
-                                        <p>Centre de loisirs :</p>
-                                          <ul>
-                                                <li>Mercredi apr&egrave;s-midi : 2,67 &euro;</li>
-                                                <li>Vacances sans repas : 4,45 &euro;</li>
-                                                <li>Vacances avec repas : 8,07 &euro;</li>
-                                                <li>Etudes surveill&eacute;es : 5,70 &euro;</li>
-                                                  <li>Ateliers bleus du soir : 11,93 &euro;</li>
-                                          </ul>
+                                <p class="text-center">
+                                        <a href="jsp/site/Portal.jsp?page=crm" class="btn btn-labeled btn-success">
+                                        <span class="btn-label">
+                                        <i class="fa fa-check"></i>
+                                        </span>
+                                        Valider ma demande
+                                        </a>
+                                </p>
                                 </div>
                         </div>
                         <#else>
-                        <div class="alert alert-danger" role="alert">Erreur lors de la récupération des infos depuis la dgfip.</div>
+                        <div class="alert alert-danger" role="alert">Erreur lors de la récupération des infos depuis le siv.</div>
                         </#if>
                 </div>
         </div>
