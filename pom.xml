@@ -412,4 +412,11 @@
         </build>
       </profile>
     </profiles>
+
+    <scm>
+        <connection>scm:git:https://github.com/lutece-secteur-public/hackathon-franceconnect-site.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-secteur-public/hackathon-franceconnect-site.git</developerConnection>
+        <url>https://github.com/lutece-secteur-public/hackathon-franceconnect-site.git</url>
+    </scm>
+
 </project>
